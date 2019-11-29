@@ -24,7 +24,7 @@ trackme
   )
   .parse(process.argv);
 
-//create form data
+//create entry
 const data = createEntry(trackme);
 
 //post
