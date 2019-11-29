@@ -7,8 +7,8 @@ install deps
 set `.env` file as follows:
 
 ```
-USER=youruser
-PASSWORD=yourpass
+RM_USER=youredmineuser
+RM_PASS=youredminepass
 HOST=redmine.domain.com
 ```
 
