@@ -11,6 +11,7 @@ RM_USER=youredmineuser
 RM_PASS=youredminepass
 RM_HOST=redmine.domain.com
 ```
+**obs:** redmine's server admin should enable the REST API option in Administration -> Settings -> API
 
 create an alias 
 
