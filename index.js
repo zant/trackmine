@@ -1,7 +1,5 @@
 const trackme = require('commander');
-const prompt = require('prompt');
 const http = require('http');
-const FormData = require('form-data');
 require('dotenv').config();
 
 const { RM_HOST, RM_USER, RM_PASS } = process.env;
