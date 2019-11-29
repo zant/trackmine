@@ -4,7 +4,7 @@
 
 `yarn install`
 
-set `.env` file as follows:
+set `.env`:
 
 ```
 RM_USER=youredmineuser
@@ -18,11 +18,11 @@ create an alias
 
 ### usage
 
-the complete API is available with `--help`
-
 to create a basic time entry with `hour=1` and `issue_id=11123`
 
 `trackmine -h 1.00 -i 11123`
+
+the complete API is available with `--help`
 
 ### license
 [MIT](https://github.com/grdnrt/trackmine/blob/master/LICENSE)
