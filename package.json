@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "commander": "^4.0.1",
-    "dotenv": "^8.2.0"
+    "conf": "^6.2.0",
+    "dotenv": "^8.2.0",
+    "prompt": "^1.0.0"
   }
 }
