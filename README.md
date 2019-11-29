@@ -24,3 +24,5 @@ to create a basic time entry with `hour=1` and `issue_id=11123`
 
 `trackmine -h 1.00 -i 11123`
 
+### license
+[MIT](https://github.com/grdnrt/trackmine/blob/master/LICENSE)
