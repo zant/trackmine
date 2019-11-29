@@ -9,7 +9,7 @@ set `.env` file as follows:
 ```
 RM_USER=youredmineuser
 RM_PASS=youredminepass
-HOST=redmine.domain.com
+RM_HOST=redmine.domain.com
 ```
 
 usage
