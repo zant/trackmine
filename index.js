@@ -1,9 +1,10 @@
 const trackme = require('commander');
 const prompt = require('prompt');
-const URL = 'redmine.codium.com.py';
 const http = require('http');
 const FormData = require('form-data');
 require('dotenv').config();
+
+const { RM_HOST, RM_USER, RM_PASS } = process.env;
 
 trackme
   .version('0.0.1')
@@ -29,7 +30,7 @@ trackme
 const data = createFormData(trackme);
 
 //post
-postData(URL, data);
+postData(RM_HOST, data);
 
 function createFormData(trackme) {
   return (({ project, issue, when, hours, comments, activity, fabrica }) => {
@@ -56,7 +57,7 @@ function postData(url, data) {
     hostname: url,
     method: 'POST',
     path: '/time_entries.json',
-    auth: `${process.env.USER}:${process.env.PASSWORD}`,
+    auth: `${RM_USER}:${RM_PASS}`,
     headers: {
       'Content-Type': 'application/json',
       'Content-Length': Buffer.byteLength(postData)
