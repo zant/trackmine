@@ -6,7 +6,7 @@ const { RM_HOST, RM_USER, RM_PASS } = process.env;
 
 trackme
   .version('0.0.1')
-  .name('track')
+  .name('trackmine')
   .option('-p --project <project>', 'project')
   .requiredOption('-i, --issue <issue>', 'issue')
   .requiredOption(
