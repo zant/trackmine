@@ -46,15 +46,6 @@ trackmine
     }
   });
 
-async function getPrompt(err, res) {
-  try {
-    if (err) console.log('Unexpected error');
-    config.set('password', res.password);
-  } catch (err) {
-    process.exit(1);
-  }
-}
-
 trackmine
   .version('0.0.1')
   .name('trackme')
@@ -67,11 +58,6 @@ trackmine
   .option('-h, --hours <hours>', 'amount of hours')
   .option('-c, --comments <comments>', 'commentario')
   .option('-a, --activity <activity_id>', 'activity id')
-  .requiredOption(
-    '-f --fabrica',
-    'if it was at fabrica, this is the default behaviour',
-    true
-  )
   .helpOption('-e, --help', 'more information');
 
 trackmine.parse(process.argv);
@@ -100,10 +86,7 @@ function createEntry(trackme) {
         spent_on: when,
         hours,
         comments,
-        activity_id: activity,
-        custom_field_values: {
-          '15': (fabrica => (fabrica ? 'Fábrica' : 'Cliente'))(fabrica)
-        }
+        activity_id: activity
       }
     });
   })(trackme);
@@ -136,4 +119,13 @@ function postEntry(url, data) {
 
   request.write(postData);
   request.end();
+}
+
+function getPrompt(err, res) {
+  try {
+    if (err) console.log('Unexpected error');
+    config.set('password', res.password);
+  } catch (err) {
+    process.exit(1);
+  }
 }
