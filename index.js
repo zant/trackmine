@@ -8,6 +8,7 @@ require('dotenv').config();
 trackme
   .version('0.0.1')
   .name('track')
+  .option('-p --project <project>', 'project')
   .requiredOption('-i, --issue <issue>', 'issue')
   .requiredOption(
     '-w, --when <time>',
@@ -32,8 +33,9 @@ postData(URL, data);
 
 function createFormData(trackme) {
   return (({ project, issue, when, hours, comments, activity, fabrica }) => {
-    return new FormData({
+    return new Object({
       time_entry: {
+        project_id: project,
         issue_id: issue,
         spent_on: when,
         hours,
@@ -48,20 +50,23 @@ function createFormData(trackme) {
 }
 
 function postData(url, data) {
+  const postData = JSON.stringify(data);
+
   const request = http.request({
     hostname: url,
     method: 'POST',
-    path: '/time_entries.xml',
+    path: '/time_entries.json',
+    auth: `${process.env.USER}:${process.env.PASSWORD}`,
     headers: {
-      'X-Redmine-API-Key': process.env.API_KEY
+      'Content-Type': 'application/json',
+      'Content-Length': Buffer.byteLength(postData)
     }
   });
-
-  data.pipe(request);
 
   request.on('response', res => {
     console.log(res.statusCode);
     console.log(res.statusMessage);
+    console.log(data);
   });
 
   request.on('error', e => {
@@ -69,5 +74,6 @@ function postData(url, data) {
     process.exit(1);
   });
 
+  request.write(postData);
   request.end();
 }
