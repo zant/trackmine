@@ -12,7 +12,11 @@ RM_PASS=youredminepass
 RM_HOST=redmine.domain.com
 ```
 
-usage
+### usage
+
+the complete API is available with `--help`
+
+to create a basic time entry with `hour=1` and `issue_id=11123`
 
 `node index.js -h 1.00 -i 11123`
 
