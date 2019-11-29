@@ -1,5 +1,8 @@
 # trackmine
 
+install deps
+`yarn install`
+
 usage
 
-`trackme -h 1.00 -i 11123`
+`node index.js -h 1.00 -i 11123`
