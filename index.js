@@ -25,12 +25,12 @@ trackme
   .parse(process.argv);
 
 //create form data
-const data = createData(trackme);
+const data = createEntry(trackme);
 
 //post
-postData(RM_HOST, data);
+postEntry(RM_HOST, data);
 
-function createData(trackme) {
+function createEntry(trackme) {
   return (({ project, issue, when, hours, comments, activity, fabrica }) => {
     return new Object({
       time_entry: {
@@ -48,7 +48,7 @@ function createData(trackme) {
   })(trackme);
 }
 
-function postData(url, data) {
+function postEntry(url, data) {
   const postData = JSON.stringify(data);
 
   const request = http.request({
