@@ -2,7 +2,7 @@
 
 ### installing
 
-`https://github.com/grdnrt/trackmine.git`
+`git clone https://github.com/grdnrt/trackmine.git`
  
 `cd trackmine`
 
