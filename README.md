@@ -2,6 +2,10 @@
 
 ### installing
 
+`https://github.com/grdnrt/trackmine.git`
+ 
+`cd trackmine`
+
 `yarn install`
 
 create an alias
