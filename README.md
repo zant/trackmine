@@ -20,7 +20,17 @@ to create a basic time entry with `hour=1`, `issue_id=11123` & `comment=comments
 
 `trackmine -h 1.00 -i 11123 -c "comments"`
 
-the complete API is available with `--help`
+API:
+
+```
+  -V, --version                 output the version number
+  -i, --issue <issue>           issue
+  -w, --when <time>             if no option provided it will use today's date (default: "2019-12-04")
+  -h, --hours <hours>           amount of hours
+  -c, --comments <comments>     commentario
+  -a, --activity <activity_id>  activity id
+  -e, --help                    more information
+```
 
 ### license
 
