@@ -10,7 +10,7 @@
 
 create an alias
 
-`alias trackmine='$PWD node index.js'`
+`alias trackmine='node $PWD/index.js'`
 
 ### usage
 
